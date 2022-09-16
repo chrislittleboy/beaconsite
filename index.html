@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .container {
+            display: flex;
+        }
+        .container > div {
+            flex: 1; /*grow*/
+        }
+        body {
+            background-image: url(img/sunset.jpg);
+            background-repeat: no-repeat;
+            background-size: auto;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+  <body>
+    <div>
+        <h1 class="text-center">Beacon Project</h1>
+    </div>
+    <div id="homenav" class="container", style="background-color: azure;">
+        <div id="visnav">
+            <h2 class="text-center">
+                <a href="html/searchvis.html">
+                    Dam Explorer
+                </a>
+            </h2>     
+        </div>
+        <div id="visdec">
+            <h2 class="text-center">
+                <a href="html/searchdec.html">Dam Decisions</a>
+            </h2>     
+        </div>
+        <div id="cs">
+            <h2 class="text-center"><a href="html/cs.html">Case studies</a></h2>
+        </div>
+    </div>
+  </body>
+</html>
