@@ -3,43 +3,50 @@
   <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style>
-        .container {
-            display: flex;
-        }
-        .container > div {
-            flex: 1; /*grow*/
-        }
-        body {
-            background-image: url(img/sunset.jpg);
-            background-repeat: no-repeat;
-            background-size: auto;
-            background-position: center;
-            background-attachment: fixed;
-        }
-    </style>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+ integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+ crossorigin=""></script>
+
 </head>
   <body>
-    <div>
-        <h1 class="text-center">Beacon Project</h1>
-    </div>
-    <div id="homenav" class="container", style="background-color: azure;">
-        <div id="visnav">
-            <h2 class="text-center">
-                <a href="html/searchvis.html">
-                    Dam Explorer
-                </a>
-            </h2>     
+      <div class="w3-sidebar w3-bar-block w3-collapse w3-card" style="width:200px;" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-hide-large"
+        onclick="w3_close()">Close &times;</button>
+        <a href="#" class="w3-bar-item w3-button">Dam Visualiser</a>
+        <a href="#" class="w3-bar-item w3-button">Case Studies</a>
+        <a href="#" class="w3-bar-item w3-button">About Us</a>
+      </div>
+     
+      <div class="w3-main" style="margin-left:200px">
+      
+      <div class="w3-dark-gray">
+        <div class="w3-container">
+          <h1>What impact do dams have on people and the environment?</h1>
         </div>
-        <div id="visdec">
-            <h2 class="text-center">
-                <a href="html/searchdec.html">Dam Decisions</a>
-            </h2>     
+ 
+        <div class="w3-container w3-blue-gray">
+            <p>Choose which of the world's biggest dams to explore?</p>
+          </div>
+
+        <div class="w3-container w3-amber" style="height:300px" style="width:70%" id="damselecta">
+            Hi
         </div>
-        <div id="cs">
-            <h2 class="text-center"><a href="html/cs.html">Case studies</a></h2>
-        </div>
-    </div>
-  </body>
+
+     </body>
+      <script>
+      function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+      }
+      
+      function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+      }
+      </script> 
+      
+
 </html>
