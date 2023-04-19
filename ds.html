@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/w3.css"> 
+    <link rel="stylesheet" href="/node_modules/ol/ol.css">
+
+<style>
+* {
+  box-sizing: border-box;
+
+}
+
+ /* Navbar container */
+ .navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 2vw;
+  color: white;
+  text-align: center;
+  padding: 50px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 2vw;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 50px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #000033;
+  font-size: 2vw;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px;
+  font-size: 2vw;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+} 
+
+.cs {
+  background-color: #e5e5e5;
+  float: left;
+  width: 20%;
+  padding: 15px;
+  margin-top: 7px;
+  text-align: center;
+  font-size:2vw;
+}
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .main, .cs {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body style="font-family:Verdana;color:#aaaaaa;height:3000px">
+
+  <div class="navbar">
+    <a href="ds.html">Dam Impacts</a>
+    <a href="cs.html">Case Studies</a>
+    <div class="dropdown">
+      <button class="dropbtn">More
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#">About us</a>
+        <a href="#">Statistical explorer</a>
+        <a href="#">Technical information</a>
+      </div>
+    </div>
+  </div> 
+
+  <div class="main" style="height:3000px; padding: 100px">
+    <h1 style="font-size: 2vw"> Dam locations</h1>
+    <h2 style="font-size: 1.2vw"> <em>Please select a dam using the map or the search bar.</em></h1>
+        <div class="search-container">
+            <form action="/action_page.php">
+              <input type="text" placeholder="Search.." name="search">
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+    <div id="map", style="height:100%;width:100%"></div>
+  </div>
+
+<script type="module" src="./main.js"></script>
+
+</body>
+</html>

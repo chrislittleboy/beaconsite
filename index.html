@@ -1,52 +1,129 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-    crossorigin=""/>
-     <!-- Make sure you put this AFTER Leaflet's CSS -->
- <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
- integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
- crossorigin=""></script>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/w3.css"> 
+    <link rel="stylesheet" href="/node_modules/ol/ol.css">
 
+<style>
+* {
+  box-sizing: border-box;
+
+}
+
+ /* Navbar container */
+ .navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 2vw;
+  color: white;
+  text-align: center;
+  padding: 50px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 2vw;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 50px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #000033;
+  font-size: 2vw;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px;
+  font-size: 2vw;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+} 
+
+.cs {
+  background-color: #e5e5e5;
+  float: left;
+  width: 20%;
+  padding: 15px;
+  margin-top: 7px;
+  text-align: center;
+  font-size:2vw;
+}
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .main, .cs {
+    width: 100%;
+  }
+}
+</style>
 </head>
-  <body>
-      <div class="w3-sidebar w3-bar-block w3-collapse w3-card" style="width:200px;" id="mySidebar">
-        <button class="w3-bar-item w3-button w3-hide-large"
-        onclick="w3_close()">Close &times;</button>
-        <a href="#" class="w3-bar-item w3-button">Dam Visualiser</a>
-        <a href="#" class="w3-bar-item w3-button">Case Studies</a>
-        <a href="#" class="w3-bar-item w3-button">About Us</a>
+<body style="font-family:Verdana;color:#aaaaaa;height:3000px">
+
+  <div class="navbar">
+    <a href="ds.html">Dam Impacts</a>
+    <a href="cs.html">Case Studies</a>
+    <div class="dropdown">
+      <button class="dropbtn">More
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#">About us</a>
+        <a href="#">Statistical explorer</a>
+        <a href="#">Technical information</a>
       </div>
-     
-      <div class="w3-main" style="margin-left:200px">
-      
-      <div class="w3-dark-gray">
-        <div class="w3-container">
-          <h1>What impact do dams have on people and the environment?</h1>
-        </div>
- 
-        <div class="w3-container w3-blue-gray">
-            <p>Choose which of the world's biggest dams to explore?</p>
-          </div>
+    </div>
+  </div> 
 
-        <div class="w3-container w3-amber" style="height:300px" style="width:70%" id="damselecta">
-            Hi
-        </div>
+  <div class="main" style="height:3000px; padding: 100px">
+    <h1 style="font-size: 2vw"> Dam locations</h1>
+    <h2 style="font-size: 1.2vw"> <em>Please select a dam using the map or the search bar.</em></h1>
+    <div id="map", style="height:100%;width:100%"></div>
+  </div>
 
-     </body>
-      <script>
-      function w3_open() {
-        document.getElementById("mySidebar").style.display = "block";
-      }
-      
-      function w3_close() {
-        document.getElementById("mySidebar").style.display = "none";
-      }
-      </script> 
-      
+<script type="module" src="./main.js"></script>
 
+</body>
 </html>
